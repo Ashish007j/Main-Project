@@ -17,14 +17,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
      private String  id ;
-     private String name;
+     private String Name;
      @Indexed(unique = true)
      private String email;
      private String password;
      private AccountType accountType;
 
      public UserDTO toDTO() {
-         return  new UserDTO(this.id , this.name , this.email ,this.password , this.accountType);
+         return  new UserDTO(this.id , this.Name, this.email ,this.password , this.accountType);
      }
 
 }

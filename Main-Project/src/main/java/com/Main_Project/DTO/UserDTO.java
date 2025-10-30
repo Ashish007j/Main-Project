@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserDTO {
     private String  id ;
-    private String name;
+    private String Name;
     private String email;
     private String password;
     private AccountType accountType;
 
     public User toEntity() {
-        return  new User(this.id , this.name , this.email ,this.password , this.accountType);
+        return  new User(this.id , this.Name, this.email ,this.password , this.accountType);
     }
 }

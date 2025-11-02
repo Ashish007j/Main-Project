@@ -2,6 +2,8 @@ package com.Main_Project.DTO;
 
 
 import com.Main_Project.ENTITY.User;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-    private String  id ;
+    private Long  id ;
     private String Name;
+    @NotBlank(message = "user.email.absent")
+    //@Email(message = "user.email.invalid")
     private String email;
+    @NotBlank(message = "user.password.absent")
     private String password;
     private AccountType accountType;
 

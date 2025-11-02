@@ -20,6 +20,7 @@ public class ExceptionControllerAdvice {
 ErrorInfo error = new ErrorInfo(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value() , LocalDateTime.now());
   return new ResponseEntity<>(error , HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
     @ExceptionHandler({MethodArgumentNotValidException.class , ConstraintViolationException.class})
     public ResponseEntity<ErrorInfo> validatorExceptionHandler(Exception exception) {
         String msg = "";

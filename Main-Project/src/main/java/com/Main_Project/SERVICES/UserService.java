@@ -1,8 +1,9 @@
 package com.Main_Project.SERVICES;
 
 import com.Main_Project.DTO.UserDTO;
+import com.Main_Project.EXCEPTION.jobPortalException;
 
 public interface UserService {
-    public UserDTO registerUser(UserDTO userDTO) ;
+    public UserDTO registerUser(UserDTO userDTO)  throws jobPortalException;
 
 }

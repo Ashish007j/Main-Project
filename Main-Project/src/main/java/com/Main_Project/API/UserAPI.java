@@ -22,5 +22,5 @@ public class UserAPI {
         userDTO = userService.registerUser(userDTO);
         return new ResponseEntity<>(userDTO , HttpStatus.CREATED);
     }
-
+   
 }

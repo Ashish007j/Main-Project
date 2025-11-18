@@ -22,5 +22,10 @@ public class UserAPI {
         userDTO = userService.registerUser(userDTO);
         return new ResponseEntity<>(userDTO , HttpStatus.CREATED);
     }
+    @PostMapping("/login")
+    public <LoginDTO> ResponseEntity<UserDTO>loginUser(@RequestBody @Valid LoginDTO loginDTO) throws jobPortalException {
+
+        return new ResponseEntity<>(userService.loginUser(loginDTO) , HttpStatus.OK);
+    }
    
 }

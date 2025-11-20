@@ -1,5 +1,6 @@
 package com.Main_Project.SERVICES;
 
+import com.Main_Project.DTO.LoginDTO;
 import com.Main_Project.DTO.UserDTO;
 import com.Main_Project.ENTITY.User;
 import com.Main_Project.EXCEPTION.jobPortalException;
@@ -31,9 +32,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public <LoginDTO> UserDTO loginUser(LoginDTO loginDTO) throws jobPortalException {
-        User user = userRepositry.findByEmail(loginDTO.getEmail()).orElseThrow(() -> new  jobPortalException("USER_NOT_FOUND"));
-        if (passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) throw new jobPortalException("INVALID_");
-        return user.toDTO();
+    public UserDTO loginUser(LoginDTO loginDTO) throws jobPortalException {
+ User user = userRepositry.findByEmail(loginDTO.getEmail()).orElseThrow(()-> new jobPortalException("USER_NOT_FIND"));
+ if(passwordEncoder.matches(loginDTO.getPassword() , user.getPassword())) throw new jobPortalException("PASSWORD_NOT_MATCHED_");
+ return user.toDTO();
     }
+
 }
